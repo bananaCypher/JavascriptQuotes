@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Frontend JS</title>
+  <script src='app.js'></script>
+  <link rel="stylesheet" type="text/css" href="style.css" />
+</head>
+<body>
+  <header>
+    <h1>
+      <img class="logo" src="http://www.yellowjammarketing.com/wp-content/uploads/2015/01/Speech-Mark.png" />
+      Quotes
+    </h1>
+
+  </header>
+  <main>
+    <intro>
+      <p id="tagline">Welcome to our super awesome quotes site full of super awesome quote goodness.</p>
+      <p>Here you will find lots of quotes about programming.</p>
+    </intro>
+    <section>
+    </section>
+    <form id="new-quote-form">
+        <fieldset>
+            <legend>New Quote:</legend>
+            <label for="new-quote-author">Author</label></br>
+            <input type="text" value="" name="" id="new-quote-author"/><br/>
+            <label for="new-quote-text">Quote</label><br/>
+            <textarea name="new-quote-text" id="new-quote-text"></textarea><br/>
+            <input type="submit" value="Create Quote" name="" id="new-quote-submit"/>
+        </fieldset>
+    </form>
+    <section>
+      <aside>
+        <h2>Quote of the day</h2>
+        <blockquote>
+          That is quite obviously a frog.
+          <cite>
+            Jay Chetty
+          </cite>
+        </blockquote>
+      </aside>
+      <aside>
+        <h2>Sign up</h2>
+        <p>Get a cool programming quote delivered to your inbox every day.</p>
+        <form>
+          <fieldset>
+            <label>
+              Email Address
+            </label>
+            <input type="text" placeholder="your email address" />
+            <button>Submit</button>
+          </fieldset>
+        </form>
+      </aside>
+    </section>
+  </main>
+</body>
+</html>
