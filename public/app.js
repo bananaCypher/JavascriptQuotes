@@ -5,6 +5,38 @@ var Quote = function(text, author){
     this.author = "  " + author; 
 };
 
+var clearFormFields = function(){
+    var text = document.getElementById('new-quote-text');
+    var author = document.getElementById('new-quote-author');
+    text.value = '';
+    author.value = '';
+};
+
+var deleteDummyQuote = function(){
+    var quote = document.getElementById('dummy-quote');
+    if (quote) {
+        quote.parentElement.removeChild(quote);
+    }
+};
+
+var createDummyQuoteElement = function(quote){
+    var quoteArticle = document.createElement('article');
+    var blockquote = document.createElement('blockquote');
+    var cite = document.createElement('cite');
+    var articleArea = document.getElementsByTagName('section')[0];
+
+    quoteArticle.classList.add('dummy-quote');
+    quoteArticle.id = 'dummy-quote';
+    blockquote.innerText = quote.text;
+    cite.innerText = quote.author;
+    blockquote.appendChild(cite);
+    quoteArticle.appendChild(blockquote);
+
+    articleArea.appendChild(quoteArticle);
+    quote.element = quoteArticle;
+    return quoteArticle;
+}
+
 var createQuoteElement = function(quote){
     var quoteArticle = document.createElement('article');
     var blockquote = document.createElement('blockquote');
@@ -31,33 +63,23 @@ var createQuoteElement = function(quote){
 }
 
 var fieldUpdateHandler = function(){
-    var dummyQuote = document.getElementById('new-quote');
-    if (dummyQuote) {
-        dummyQuote.parentElement.removeChild(quote);
-    }
+    deleteDummyQuote();
     var authorField = document.getElementById('new-quote-author');
     var textField = document.getElementById('new-quote-text');
     if (authorField.value == '' && textField.value == '') {
         return;
     }
-    var authorField = document.getElementById('new-quote-author');
-    var textField = document.getElementById('new-quote-text');
-    quote = createQuoteElement(new  Quote(textField.value, authorField.value));
-    quote.id = 'new-quote';
+    quote = createDummyQuoteElement(new  Quote(textField.value, authorField.value));
 };
 
 var quoteFormHandler = function(event){
-    var quote = document.getElementById('new-quote');
-    if (quote) {
-        quote.parentElement.removeChild(quote);
-    }
+    deleteDummyQuote();
     event.preventDefault();
     var text = document.getElementById('new-quote-text');
     var author = document.getElementById('new-quote-author');
     var quote = new Quote(text.value, author.value);
 
-    text.value = '';
-    author.value = '';
+    clearFormFields();
 
     quotes.push(quote);
     createQuoteElement(quote);
