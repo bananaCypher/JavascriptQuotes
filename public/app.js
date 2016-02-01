@@ -2,7 +2,7 @@ var quotes = [];
 
 var Quote = function(text, author){
     this.text = text;
-    this.author = "  " + author; 
+    this.author = " " + author; 
 };
 
 var clearFormFields = function(){

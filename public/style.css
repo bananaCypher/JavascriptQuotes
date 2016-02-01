@@ -10,7 +10,13 @@ body {
 }
 textarea {
     width: 600px;
-    height: 175px;
+    height: 185px;
+    background-image: linear-gradient(#fff 23px, black 1px);
+    background-size: auto 24px;
+    border: 0;
+    border-top: 1px solid black;
+    border-bottom: 1px solid black;
+    font-size: 20px;
 }
 
 button {
@@ -19,19 +25,53 @@ button {
 
 fieldset {
     margin: 40px 10px;
+    display: inline-block;
 }
 
 input[type='text'] {
     width: 600px;
+    border: 0;
+    background-color: rgba(0,0,0,0);
+    border-bottom: 1px solid black;
 }
 
 article blockquote {
     font-size: 1.2em;
+    margin-bottom: 12px;
 }
 article cite {
-    font-size: 0.8em;
+    font-size: 1em;
 }
 
 article.dummy-quote {
     color: grey;
+}
+
+p {
+    margin: 29px 0;
+}
+
+h1 {
+    margin: 16px 0;
+}
+
+label {
+    display:inline-block;
+    margin-top: 9px;
+}
+label:last-of-type {
+    margin-top: 6px;
+}
+
+article.dummy-quote blockquote {
+    margin-bottom: 7px;
+}
+
+input[type='submit'] {
+    background-color: rgba(0,0,0,0);
+    font-size: 20px;
+    border: 0;
+}
+input[type='submit']:hover {
+    background-color: rgba(235,255,69,0.75);
 }
