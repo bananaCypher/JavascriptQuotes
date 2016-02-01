@@ -56,6 +56,9 @@ var quoteFormHandler = function(event){
     var author = document.getElementById('new-quote-author');
     var quote = new Quote(text.value, author.value);
 
+    text.value = '';
+    author.value = '';
+
     quotes.push(quote);
     createQuoteElement(quote);
 }
